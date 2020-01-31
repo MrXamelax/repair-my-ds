@@ -6,8 +6,10 @@ public class PlayerMovement : MonoBehaviour {
 
     [SerializeField] Transform playerTf;
     [SerializeField] float movementSpeed = 1;
-    private Vector3 move = Vector3.zero;
     [SerializeField] [Tooltip("Turn on for the real icy shit")] bool iced = false;
+    private Vector3 move = Vector3.zero;
+    private bool collide = false;
+    
 
     void Start() {
         
@@ -18,10 +20,10 @@ public class PlayerMovement : MonoBehaviour {
         if (!iced) move = Vector3.zero;
 
         if (Input.GetKey(KeyCode.W)) {
-            if (Input.GetKey(KeyCode.S)) { } else move.y += 1f;
+            if (Input.GetKey(KeyCode.S)) { } else move.z += 1f;
         } else {
             if (Input.GetKey(KeyCode.S)) {
-                if (Input.GetKey(KeyCode.W)) { } else move.y += -1f;
+                if (Input.GetKey(KeyCode.W)) { } else move.z += -1f;
             }
         }
 
@@ -33,8 +35,13 @@ public class PlayerMovement : MonoBehaviour {
             }
         }
 
-        playerTf.position += move.normalized * Time.deltaTime;
+        playerTf.position += move.normalized * movementSpeed * Time.deltaTime;
 
+    }
+
+    private void OnTriggerEnter(Collider other) { 
+    Debug.Log("Collided!");
+        collide = true;
     }
 
 }
