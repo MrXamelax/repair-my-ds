@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMovementTiles : MonoBehaviour {
 
     [SerializeField] float movementSpeed = 1;
+    [SerializeField] Camera cam;
     private bool wFree = true, sFree = true, dFree = true, aFree = true;
     private bool moving = false;
     private Vector3 destination;
