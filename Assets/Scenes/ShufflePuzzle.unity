@@ -217,6 +217,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPrefab: {fileID: 4664156049898700283, guid: 031854443a9814a4bb357d1820452992,
     type: 3}
+  images4x4:
+  - {fileID: -2700637419414784466, guid: 762d9d114dfc53446910cba36f9ded57, type: 3}
+  - {fileID: -7608045283560673260, guid: 762d9d114dfc53446910cba36f9ded57, type: 3}
+  - {fileID: -7369232075176543610, guid: 762d9d114dfc53446910cba36f9ded57, type: 3}
+  - {fileID: -2822910805864023521, guid: 762d9d114dfc53446910cba36f9ded57, type: 3}
+  - {fileID: 1702287117461308258, guid: 762d9d114dfc53446910cba36f9ded57, type: 3}
+  - {fileID: -5308017956676389344, guid: 762d9d114dfc53446910cba36f9ded57, type: 3}
+  - {fileID: -1803811339522604128, guid: 762d9d114dfc53446910cba36f9ded57, type: 3}
+  - {fileID: 5366620779420239384, guid: 762d9d114dfc53446910cba36f9ded57, type: 3}
+  - {fileID: 2688449107699834780, guid: 762d9d114dfc53446910cba36f9ded57, type: 3}
+  - {fileID: 8765419482672196536, guid: 762d9d114dfc53446910cba36f9ded57, type: 3}
+  - {fileID: -5752326428451125991, guid: 762d9d114dfc53446910cba36f9ded57, type: 3}
+  - {fileID: -2187931302546297960, guid: 762d9d114dfc53446910cba36f9ded57, type: 3}
+  - {fileID: 6812633257130288654, guid: 762d9d114dfc53446910cba36f9ded57, type: 3}
+  - {fileID: 7972532961283410042, guid: 762d9d114dfc53446910cba36f9ded57, type: 3}
+  - {fileID: -3592222988403190314, guid: 762d9d114dfc53446910cba36f9ded57, type: 3}
+  - {fileID: -6867868346340658435, guid: 762d9d114dfc53446910cba36f9ded57, type: 3}
 --- !u!224 &221423687
 RectTransform:
   m_ObjectHideFlags: 0

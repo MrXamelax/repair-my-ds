@@ -50,7 +50,7 @@ public class Minesweeper : MonoBehaviour, IInitializable {
             GenerateGrid(x, y);
         }
 
-        if (Input.GetMouseButton(1)) {
+        if (Input.GetMouseButton(1) || Input.GetKey(KeyCode.LeftShift)) {
             button.GetComponentInChildren<Text>().text = "F";
         } else {
             if (grid[x, y]) {
@@ -59,7 +59,7 @@ public class Minesweeper : MonoBehaviour, IInitializable {
                 //TODO punishment
             } else {
                 int surroundingBombs = GetSorroundingBombs(x, y);
-                button.GetComponentInChildren<Text>().text = surroundingBombs.ToString();
+                button.GetComponentInChildren<Text>().text = surroundingBombs == 0 ? "" : surroundingBombs.ToString();
                 if (surroundingBombs == 0) {
                     RevealSorroundingFields(x, y);
                 }

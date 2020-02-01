@@ -50,7 +50,7 @@ public class OrderNumbers : MonoBehaviour, IInitializable {
 
         for (int i = 0; i < fieldSizeSq; i++) {
             GameObject spawn = Instantiate(spawnPrefab, transform);
-            int buttonNumber = temp.ElementAt((int)(Random.value * temp.Count - 1));
+            int buttonNumber = temp.ElementAt((int)(Random.value * (temp.Count - 1)));
             spawn.name = $"But-{buttonNumber}";
             spawn.GetComponentInChildren<Text>().text = buttonNumber.ToString();
             spawn.GetComponent<Button>().onClick.AddListener(() => {
