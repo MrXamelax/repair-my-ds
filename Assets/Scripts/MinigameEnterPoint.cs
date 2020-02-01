@@ -13,6 +13,8 @@ public class MinigameEnterPoint : MonoBehaviour {
 
     public int[] paramsForGames;
 
+    public float timeScaleReward = 0.1f;
+
     private void OnTriggerEnter(Collider other) {
         PlayerActions pa = other.GetComponent<PlayerActions>();
         if (pa) {
@@ -34,5 +36,6 @@ public class MinigameEnterPoint : MonoBehaviour {
     public void Solved() {
         GetComponent<Renderer>().material.color = Color.green;
         GetComponent<Collider>().enabled = false;
+        Timer.instance.speed *= timeScaleReward;
     }
 }
