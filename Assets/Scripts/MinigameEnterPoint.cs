@@ -4,13 +4,16 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public enum Minigame {
-    Ordernumbers, ShufflePuzzle
+    Ordernumbers, ShufflePuzzle, Minesweeper
 }
 
 [RequireComponent(typeof(Collider))]
 public class MinigameEnterPoint : MonoBehaviour {
     public Minigame minigame;
 
+    [Tooltip("Order: 1-fieldsize, 2-biggest number \n" +
+        "Shuffle: 1-fieldsize \n" +
+        "Minesweeper: 1-width, 2-height, 3-bombs")]
     public int[] paramsForGames;
 
     public float timeScaleReward = 0.1f;

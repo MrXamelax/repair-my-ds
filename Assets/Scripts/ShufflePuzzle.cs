@@ -16,8 +16,10 @@ public class ShufflePuzzle : MonoBehaviour, IInitializable {
 
     [SerializeField] GameObject spawnPrefab;
 
+    [SerializeField] Sprite[] images4x4;
+
     MinigameManager manager;
-    int fieldSize = 6;
+    int fieldSize = 4;
     float imgSize;
 
 
@@ -34,9 +36,19 @@ public class ShufflePuzzle : MonoBehaviour, IInitializable {
 
         freeSpot = new Vector2Int(fieldSize - 1, 0);
 
+        List<Vector2Int> imageSpottelies = new List<Vector2Int>();
         for (int x = 0; x < fieldSize; x++) {
             for (int y = 0; y < fieldSize; y++) {
-                if (x == fieldSize-1 && y == 0) {
+                if (x == fieldSize - 1 && y == 0) {
+                    continue;
+                }
+                imageSpottelies.Add(new Vector2Int(x, y));
+            }
+        }
+
+        for (int x = 0; x < fieldSize; x++) {
+            for (int y = 0; y < fieldSize; y++) {
+                if (x == fieldSize - 1 && y == 0) {
                     continue;
                 }
 
@@ -45,9 +57,14 @@ public class ShufflePuzzle : MonoBehaviour, IInitializable {
                 spawn.GetComponent<RectTransform>().sizeDelta = Vector2.one * imgSize;
                 spawn.transform.localPosition = GetCanvasPositionFromCoords(new Vector2Int(x, y));
 
-                puzzlePositions.Add(spawn, new ShufflePositions(new Vector2Int(x,y), new Vector2Int(x,y)));
-                //TODO set img, set desired pos
-                spawn.GetComponent<Button>().onClick.AddListener(()=> {
+                Vector2Int spawnImageSpottely = imageSpottelies[(int)(Random.value * (imageSpottelies.Count - 1))];
+                imageSpottelies.Remove(spawnImageSpottely);
+                puzzlePositions.Add(spawn, new ShufflePositions(new Vector2Int(x, y), spawnImageSpottely));
+                spawn.GetComponent<Button>().image.sprite = images4x4[spawnImageSpottely.y * 4 + spawnImageSpottely.x];
+
+                Debug.Log($"distributed {spawnImageSpottely} with img{spawnImageSpottely.y * 4 + spawnImageSpottely.x}");
+
+                spawn.GetComponent<Button>().onClick.AddListener(() => {
                     ButtonCallback(spawn);
                 });
             }
