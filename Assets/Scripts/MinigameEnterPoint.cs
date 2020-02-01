@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public enum Minigame {
-    Ordernumbers, ShufflePuzzle
+    Ordernumbers, ShufflePuzzle, Minesweeper
 }
 
 [RequireComponent(typeof(Collider))]
