@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ShufflePuzzle.unity
     guid: 48b1947299acf4f4ca740d62177f5c99
+  - enabled: 1
+    path: Assets/Scenes/Minesweeper.unity
+    guid: 19d93bee46196a44b9871f53ab39d1c7
   m_configObjects: {}
