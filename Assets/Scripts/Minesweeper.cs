@@ -12,6 +12,7 @@ public class Minesweeper : MonoBehaviour, IInitializable {
     private int bombs = 10;
 
     [SerializeField] GameObject spawnObject;
+    [SerializeField] Gradient gradient;
 
     private bool[,] grid;
 
@@ -60,6 +61,7 @@ public class Minesweeper : MonoBehaviour, IInitializable {
             } else {
                 int surroundingBombs = GetSorroundingBombs(x, y);
                 button.GetComponentInChildren<Text>().text = surroundingBombs == 0 ? "" : surroundingBombs.ToString();
+                button.GetComponentInChildren<Text>().color = gradient.Evaluate(surroundingBombs / 8f);
                 if (surroundingBombs == 0) {
                     RevealSorroundingFields(x, y);
                 }
