@@ -231,6 +231,7 @@ GameObject:
   - component: {fileID: 305868926}
   - component: {fileID: 305868928}
   - component: {fileID: 305868927}
+  - component: {fileID: 305868929}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -297,6 +298,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 305868925}
   m_CullTransparentMesh: 0
+--- !u!114 &305868929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 305868925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a7ed90e67f524244a4065ea46ceedfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: 20
+  speed: 0.5
 --- !u!1 &377079165
 GameObject:
   m_ObjectHideFlags: 0
@@ -937,6 +952,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minigame: 0
   paramsForGames: 0300000007000000
+  timeScaleReward: 0.1
 --- !u!1 &1844573554
 GameObject:
   m_ObjectHideFlags: 0
