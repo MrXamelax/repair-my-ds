@@ -8022,6 +8022,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Robot
       objectReference: {fileID: 0}
+    - target: {fileID: -7083296303924571619, guid: bebfe6ddf11a285488d2009640259233,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 52b3846eef1e9f648b6315b1bb435f0c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bebfe6ddf11a285488d2009640259233, type: 3}
 --- !u!4 &2076134771 stripped
