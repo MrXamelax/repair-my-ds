@@ -9,16 +9,23 @@ public class PlayerMovementTiles : MonoBehaviour {
     private bool wFree = true, sFree = true, dFree = true, aFree = true;
     private bool moving = false;
     private Vector3 destination;
+    private Vector3 move = Vector3.zero;
+    private float camHeight, camDist;
 
     [SerializeField] LayerMask wallLayer;
 
     [SerializeField] Animator animator;
 
     void Start() {
-
+        camHeight = cam.transform.position.y;
+        camDist = Mathf.Abs(Mathf.Abs(cam.transform.position.z) - Mathf.Abs(transform.position.z));
     }
 
     void Update() {
+
+        cam.transform.position = new Vector3(cam.transform.position.x, camHeight, cam.transform.position.z);
+        move = transform.position - cam.transform.position;
+        move.z -= camDist;
 
         if (Input.GetKey(KeyCode.W)) {
             if (Input.GetKey(KeyCode.S)) { } else {
@@ -72,6 +79,8 @@ public class PlayerMovementTiles : MonoBehaviour {
             }
         }
 
+        cam.transform.position += move * movementSpeed * Time.deltaTime;
+        
     }
 
     IEnumerator MoveForeward() {
