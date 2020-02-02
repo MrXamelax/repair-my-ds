@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
 
     public AudioSource failSound = null;
     [SerializeField] AudioSource success = null;
+    [SerializeField] AudioSource win = null;
 
     public static float Score = 1000f;
 
@@ -34,10 +35,11 @@ public class GameManager : MonoBehaviour
 
             Timer.instance.enabled = false;
 
-            //foreach (var item in uniqueClips) {
-            //    item.Stop();
-            //    item.Play();
-            //}
+            foreach (var item in uniqueClips) {
+                item.Stop();
+            }
+            win.Play();
+            Timer.instance.MakeTextVisible();
             Invoke("BackToMenu", 7f);
 
             return;

@@ -38,4 +38,8 @@ public class Timer : MonoBehaviour {
         }
         
     }
+
+    public void MakeTextVisible() {
+        timertext.color = Color.red;
+    }
 }
