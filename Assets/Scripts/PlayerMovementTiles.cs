@@ -20,11 +20,7 @@ public class PlayerMovementTiles : MonoBehaviour {
         camDist = Mathf.Abs(Mathf.Abs(cam.transform.position.z) - Mathf.Abs(transform.position.z));
     }
 
-    void Update() {
-
-        cam.transform.position = new Vector3(cam.transform.position.x, camHeight, cam.transform.position.z);
-        move = transform.position - cam.transform.position;
-        move.z -= camDist;
+    void Update() { 
 
         if (Input.GetKey(KeyCode.W)) {
             if (Input.GetKey(KeyCode.S)) { } else {
@@ -78,6 +74,9 @@ public class PlayerMovementTiles : MonoBehaviour {
             }
         }
 
+        move = transform.position - cam.transform.position;
+        move.y = 0;
+        move.z -= camDist;
         cam.transform.position += move * movementSpeed * Time.deltaTime;
         
     }
