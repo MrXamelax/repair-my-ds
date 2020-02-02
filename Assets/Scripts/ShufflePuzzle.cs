@@ -62,7 +62,7 @@ public class ShufflePuzzle : MonoBehaviour, IInitializable {
                 puzzlePositions.Add(spawn, new ShufflePositions(new Vector2Int(x, y), spawnImageSpottely));
                 spawn.GetComponent<Button>().image.sprite = images4x4[spawnImageSpottely.y * 4 + spawnImageSpottely.x];
 
-                Debug.Log($"distributed {spawnImageSpottely} with img{spawnImageSpottely.y * 4 + spawnImageSpottely.x}");
+                //Debug.Log($"distributed {spawnImageSpottely} with img{spawnImageSpottely.y * 4 + spawnImageSpottely.x}");
 
                 spawn.GetComponent<Button>().onClick.AddListener(() => {
                     ButtonCallback(spawn);

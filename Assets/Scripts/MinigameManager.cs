@@ -22,4 +22,10 @@ public class MinigameManager : MonoBehaviour {
 
         SceneManager.UnloadSceneAsync(SceneManager.GetSceneAt(1));
     }
+
+    private void Update() {
+        if (Input.GetKeyDown(KeyCode.RightControl)) {
+            FinishedGame();
+        }
+    }
 }

@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
     private int repairsDone = 0;
     [SerializeField] AudioSource[] uniqueClips;
 
+    public static float Score = 1000f;
+
     private void Start() {
         instance = this;
         
