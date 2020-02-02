@@ -7,7 +7,7 @@ public class PlayerMovementTiles : MonoBehaviour {
     [SerializeField] float movementSpeed = 1;
     [SerializeField] Camera cam = null;
     private bool moving = false;
-    private Vector3 destination;
+    private Vector3 destination, startPosition;
     private Vector3 move = Vector3.zero;
     private float camHeight, camDist;
 
@@ -16,11 +16,20 @@ public class PlayerMovementTiles : MonoBehaviour {
     [SerializeField] Animator animator = null;
 
     void Start() {
+        startPosition = transform.position;
         camHeight = cam.transform.position.y;
         camDist = Mathf.Abs(Mathf.Abs(cam.transform.position.z) - Mathf.Abs(transform.position.z));
     }
 
-    void Update() { 
+    void Update() {
+
+        if (Input.GetKey(KeyCode.Q)) {
+            moving = false;
+            destination = startPosition;
+            transform.position = startPosition;
+            animator.SetBool("isWalking", false);
+            StopAllCoroutines();
+        }
 
         if (Input.GetKey(KeyCode.W)) {
             if (Input.GetKey(KeyCode.S)) { } else {
