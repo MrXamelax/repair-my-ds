@@ -38,6 +38,7 @@ public class MinigameEnterPoint : MonoBehaviour {
 
     public void Solved() {
         GetComponent<Renderer>().material.color = Color.green;
+        transform.GetChild(0).gameObject.SetActive(false);
         GetComponent<Collider>().enabled = false;
         Timer.instance.Speed *= timeScaleReward;
 
