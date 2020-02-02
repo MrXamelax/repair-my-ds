@@ -25,8 +25,10 @@ public class Minesweeper : MonoBehaviour, IInitializable {
         if (param.Length >= 2) height = param[1];
         if (param.Length >= 3) bombs = param[2];
 
+
+
         GetComponent<GridLayoutGroup>().constraintCount = width;
-        GetComponent<GridLayoutGroup>().cellSize = Vector2.one * 35f;
+        GetComponent<GridLayoutGroup>().cellSize = Vector2.one * Screen.height * 0.75f / height;
 
         grid = new bool[width, height];
         generated = false;
