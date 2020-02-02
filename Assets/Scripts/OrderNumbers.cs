@@ -68,7 +68,7 @@ public class OrderNumbers : MonoBehaviour, IInitializable {
                 manager.FinishedGame();
             }
         } else {
-            //TODO punishment
+            Timer.instance.Speed += 0.2f;
         }
     }
 }

@@ -56,8 +56,7 @@ public class Minesweeper : MonoBehaviour, IInitializable {
         } else {
             if (grid[x, y]) {
                 button.GetComponentInChildren<Text>().text = "X";
-
-                //TODO punishment
+                Timer.instance.Speed += 0.1f;
             } else {
                 int surroundingBombs = GetSorroundingBombs(x, y);
                 button.GetComponentInChildren<Text>().text = surroundingBombs == 0 ? "" : surroundingBombs.ToString();

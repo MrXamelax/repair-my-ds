@@ -8,9 +8,13 @@ public class Timer : MonoBehaviour {
     public static Timer instance;
 
     public float time = 20f;
-    public float speed = 0.2f;
-
     Text timertext;
+
+    private float speed;
+    public float Speed { get => speed; set {
+            speed = Mathf.Clamp01(value); 
+        }
+    }
 
     private void Start() {
         instance = this;
@@ -19,15 +23,15 @@ public class Timer : MonoBehaviour {
 
     void Update() {
         if (time >= 0f) {
-            time -= Time.deltaTime * speed;
+            time -= Time.deltaTime * Speed;
             timertext.text = "Time:\n" + time.ToString("N5");
         } else {
-            GameManager.Score -= Time.deltaTime * speed;
+            GameManager.Score -= Time.deltaTime * Speed;
             timertext.text = "Score:\n" + (GameManager.Score * 1000f).ToString("N0");
         }
         
-        if (speed < 1f) {
-            speed += Time.deltaTime * 0.03f;
+        if (Speed < 1f) {
+            Speed += Time.deltaTime * 0.03f;
         }
         
     }

@@ -61,8 +61,6 @@ public class Connect4 : MonoBehaviour, IInitializable {
         height++;
         columnLookups[col][height].color = grid[col, height] == 1 ? Color.blue : Color.red;
 
-        //TODO check 4 at col i
-
         int offSet = 0;
         int counter = 0;
         while (col + 1 * offSet < 12 && grid[col + 1 * offSet, height] == grid[col, height]) {
@@ -76,7 +74,12 @@ public class Connect4 : MonoBehaviour, IInitializable {
         }
 
         if (counter >= 4) {
-            manager.FinishedGame();
+            if (grid[col,height] == 1) {
+                manager.FinishedGame();
+            } else {
+                Timer.instance.Speed = 1f;
+                manager.FinishedGame();
+            }
         }
 
 
@@ -94,7 +97,12 @@ public class Connect4 : MonoBehaviour, IInitializable {
         }
 
         if (counter >= 4) {
-            manager.FinishedGame();
+            if (grid[col, height] == 1) {
+                manager.FinishedGame();
+            } else {
+                Timer.instance.Speed = 1f;
+                manager.FinishedGame();
+            }
         }
 
 
@@ -112,7 +120,12 @@ public class Connect4 : MonoBehaviour, IInitializable {
         }
 
         if (counter >= 4) {
-            manager.FinishedGame();
+            if (grid[col, height] == 1) {
+                manager.FinishedGame();
+            } else {
+                Timer.instance.Speed = 1f;
+                manager.FinishedGame();
+            }
         }
 
 
@@ -130,7 +143,12 @@ public class Connect4 : MonoBehaviour, IInitializable {
         }
 
         if (counter >= 4) {
-            manager.FinishedGame();
+            if (grid[col, height] == 1) {
+                manager.FinishedGame();
+            } else {
+                Timer.instance.Speed = 1f;
+                manager.FinishedGame();
+            }
         }
 
 
