@@ -12,6 +12,9 @@ public class Timer : MonoBehaviour {
 
     private float speed;
     public float Speed { get => speed; set {
+            if (value >= speed + 0.1f) {
+                GameManager.instance.failSound.Play();
+            }
             speed = Mathf.Clamp01(value); 
         }
     }

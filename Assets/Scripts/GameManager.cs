@@ -10,6 +10,9 @@ public class GameManager : MonoBehaviour
     private int repairsDone = 0;
     [SerializeField] AudioSource[] uniqueClips = null;
 
+    public AudioSource failSound = null;
+    [SerializeField] AudioSource success = null;
+
     public static float Score = 1000f;
 
     private void Start() {
@@ -25,6 +28,7 @@ public class GameManager : MonoBehaviour
     }
 
     public void RepairFinish() {
+        success.Play();
         repairsDone++;
         if (repairsDone >= uniqueClips.Length) {
 

@@ -18,6 +18,8 @@ public class MinigameEnterPoint : MonoBehaviour {
 
     public float timeScaleReward = 0.1f;
 
+    [SerializeField] AudioSource interactSound = null;
+
     private void OnTriggerEnter(Collider other) {
         PlayerActions pa = other.GetComponent<PlayerActions>();
         if (pa) {
@@ -33,6 +35,7 @@ public class MinigameEnterPoint : MonoBehaviour {
     }
 
     public void EnterMinigame() {
+        interactSound.Play();
         SceneManager.LoadScene(minigame.ToString(), LoadSceneMode.Additive);
     }
 
