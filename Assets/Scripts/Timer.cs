@@ -7,7 +7,7 @@ public class Timer : MonoBehaviour {
 
     public static Timer instance;
 
-    [SerializeField] float time = 20f;
+    public float time = 20f;
     public float speed = 0.5f;
 
     Text timertext;
@@ -21,7 +21,7 @@ public class Timer : MonoBehaviour {
         time -= Time.deltaTime * speed;
         timertext.text = time.ToString("N5");
         if (speed < 1f) {
-            speed += Time.deltaTime * 0.1f;
+            speed += Time.deltaTime * 0.02f;
         }
         
     }

@@ -40,5 +40,7 @@ public class MinigameEnterPoint : MonoBehaviour {
         GetComponent<Renderer>().material.color = Color.green;
         GetComponent<Collider>().enabled = false;
         Timer.instance.speed *= timeScaleReward;
+
+        GameManager.instance.RepairFinish();
     }
 }
