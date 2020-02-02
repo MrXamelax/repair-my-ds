@@ -14,9 +14,9 @@ public class ShufflePuzzle : MonoBehaviour, IInitializable {
         }
     }
 
-    [SerializeField] GameObject spawnPrefab;
+    [SerializeField] GameObject spawnPrefab = null;
 
-    [SerializeField] Sprite[] images4x4;
+    [SerializeField] Sprite[] images4x4 = null;
 
     MinigameManager manager;
     int fieldSize = 4;

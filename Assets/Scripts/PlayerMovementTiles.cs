@@ -5,16 +5,15 @@ using UnityEngine;
 public class PlayerMovementTiles : MonoBehaviour {
 
     [SerializeField] float movementSpeed = 1;
-    [SerializeField] Camera cam;
-    private bool wFree = true, sFree = true, dFree = true, aFree = true;
+    [SerializeField] Camera cam = null;
     private bool moving = false;
     private Vector3 destination;
     private Vector3 move = Vector3.zero;
     private float camHeight, camDist;
 
-    [SerializeField] LayerMask wallLayer;
+    [SerializeField] LayerMask wallLayer = 0;
 
-    [SerializeField] Animator animator;
+    [SerializeField] Animator animator = null;
 
     void Start() {
         camHeight = cam.transform.position.y;
@@ -131,89 +130,4 @@ public class PlayerMovementTiles : MonoBehaviour {
         moving = false;
         animator.SetBool("isWalking", false);
     }
-
-    /*
-    private void OnTriggerEnter(Collider other) {
-        Debug.Log("Trigger enter!");
-        wFree = true; sFree = true; dFree = true; aFree = true;
-        if (Physics.Raycast(transform.position, Vector3.forward, 1f, wallLayer)) {
-            wFree = false;
-            Debug.Log("W blocked!");
-        }
-        if (Physics.Raycast(transform.position, Vector3.forward + Vector3.left, 1f, wallLayer)) {
-            wFree = false;
-            aFree = false;
-            Debug.Log("W and A blocked!");
-        }
-        if (Physics.Raycast(transform.position, Vector3.forward + Vector3.right, 1f, wallLayer)) {
-            wFree = false;
-            dFree = false;
-            Debug.Log("W and D blocked!");
-        }
-        if (Physics.Raycast(transform.position, Vector3.back, 1f, wallLayer)) {
-            sFree = false;
-            Debug.Log("S blocked!");
-        }
-        if (Physics.Raycast(transform.position, Vector3.back + Vector3.left, 1f, wallLayer)) {
-            sFree = false;
-            aFree = false;
-            Debug.Log("S and A blocked!");
-        }
-        if (Physics.Raycast(transform.position, Vector3.back + Vector3.right, 1f, wallLayer)) {
-            sFree = false;
-            dFree = false;
-            Debug.Log("S and D blocked!");
-        }
-        if (Physics.Raycast(transform.position, Vector3.right, 1f, wallLayer)) {
-            dFree = false;
-            Debug.Log("D blocked!");
-        }
-        if (Physics.Raycast(transform.position, Vector3.left, 1f, wallLayer)) {
-            aFree = false;
-            Debug.Log("A blocked!");
-        }
-    }
-
-    private void OnTriggerExit(Collider other) {
-        Debug.Log("Trigger leave!");
-        wFree = true; sFree = true; dFree = true; aFree = true;
-        if (Physics.Raycast(transform.position, Vector3.forward, 1f, wallLayer)) {
-            Debug.Log("W blocked!");
-            wFree = false;
-        }
-        if (Physics.Raycast(transform.position, Vector3.back, 1f, wallLayer)) {
-            Debug.Log("S blocked!");
-            sFree = false;
-        }
-        if (Physics.Raycast(transform.position, Vector3.right, 1f, wallLayer)) {
-            Debug.Log("D blocked!");
-            dFree = false;
-        }
-        if (Physics.Raycast(transform.position, Vector3.left, 1f, wallLayer)) {
-            Debug.Log("A blocked!");
-            aFree = false;
-        }
-    }
-
-    private void OnTriggerStay(Collider other) {
-        Debug.Log("TRIGGERED");
-        if (Physics.Raycast(transform.position, Vector3.forward, 1f, wallLayer)) {
-            if (!Physics.Raycast(transform.position, Vector3.right, 1f, wallLayer)) dFree = true;
-            if (!Physics.Raycast(transform.position, Vector3.left, 1f, wallLayer)) aFree = true;
-        }
-        if (Physics.Raycast(transform.position, Vector3.back, 1f, wallLayer)) {
-            if (!Physics.Raycast(transform.position, Vector3.right, 1f, wallLayer)) dFree = true;
-            if (!Physics.Raycast(transform.position, Vector3.left, 1f, wallLayer)) aFree = true;
-        }
-        if (Physics.Raycast(transform.position, Vector3.right, 1f, wallLayer)) {
-            if (!Physics.Raycast(transform.position, Vector3.forward, 1f, wallLayer)) wFree = true;
-            if (!Physics.Raycast(transform.position, Vector3.back, 1f, wallLayer)) sFree = true;
-        }
-        if (Physics.Raycast(transform.position, Vector3.left, 1f, wallLayer)) {
-            if (!Physics.Raycast(transform.position, Vector3.forward, 1f, wallLayer)) wFree = true;
-            if (!Physics.Raycast(transform.position, Vector3.back, 1f, wallLayer)) sFree = true;
-        }
-    }
-    */
-
 }

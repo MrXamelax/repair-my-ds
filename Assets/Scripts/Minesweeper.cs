@@ -11,8 +11,8 @@ public class Minesweeper : MonoBehaviour, IInitializable {
 
     private int bombs = 10;
 
-    [SerializeField] GameObject spawnObject;
-    [SerializeField] Gradient gradient;
+    [SerializeField] GameObject spawnObject = null;
+    [SerializeField] Gradient gradient = null;
 
     private bool[,] grid;
 

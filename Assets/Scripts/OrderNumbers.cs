@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class OrderNumbers : MonoBehaviour, IInitializable {
     MinigameManager manager;
 
-    [SerializeField] GameObject spawnPrefab;
+    [SerializeField] GameObject spawnPrefab = null;
 
     [SerializeField] int fieldSize = 4;
     [SerializeField] int biggestNumber;
