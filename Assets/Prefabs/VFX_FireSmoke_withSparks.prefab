@@ -114,25 +114,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7248274211095905874, guid: dcef2ceb4e98ab045ad653accdf751c9,
-        type: 3}
-      propertyPath: m_Name
-      value: VFX_FireSmoke
-      objectReference: {fileID: 0}
     - target: {fileID: 7248274211095905873, guid: dcef2ceb4e98ab045ad653accdf751c9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.085629
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7248274211095905873, guid: dcef2ceb4e98ab045ad653accdf751c9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.77371025
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7248274211095905873, guid: dcef2ceb4e98ab045ad653accdf751c9,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 12.520184
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7248274211095905873, guid: dcef2ceb4e98ab045ad653accdf751c9,
         type: 3}
@@ -173,6 +168,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7248274211095905874, guid: dcef2ceb4e98ab045ad653accdf751c9,
+        type: 3}
+      propertyPath: m_Name
+      value: VFX_FireSmoke_withSparks
       objectReference: {fileID: 0}
     - target: {fileID: 7248274210826061216, guid: dcef2ceb4e98ab045ad653accdf751c9,
         type: 3}
