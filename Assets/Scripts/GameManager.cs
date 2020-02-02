@@ -19,12 +19,19 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Backspace)) {
             RepairFinish();
         }
-        Debug.Log(4f - (uniqueClips[0].time % 4f));
     }
 
     public void RepairFinish() {
         repairsDone++;
-        uniqueClips[repairsDone].PlayDelayed(4f - (uniqueClips[0].time % 4f));
+        if (repairsDone >= uniqueClips.Length) {
+            foreach (var item in uniqueClips) {
+                item.Stop();
+                item.Play();
+            }
+            return;
+        }
+        uniqueClips[repairsDone].PlayDelayed(8f - (uniqueClips[0].time % 8f));
+        Debug.Log($"enabled {uniqueClips[repairsDone].clip.name} in {8f - (uniqueClips[0].time % 8f)}s");
     }
 
 

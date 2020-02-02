@@ -2195,12 +2195,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uniqueClips:
   - {fileID: 862037458}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 862037466}
+  - {fileID: 862037465}
+  - {fileID: 862037464}
+  - {fileID: 862037463}
+  - {fileID: 862037462}
+  - {fileID: 862037461}
 --- !u!4 &862037460
 Transform:
   m_ObjectHideFlags: 0
