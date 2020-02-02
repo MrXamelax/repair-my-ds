@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -33,6 +34,8 @@ public class GameManager : MonoBehaviour
             //    item.Stop();
             //    item.Play();
             //}
+            Invoke("BackToMenu", 7f);
+
             return;
         }
         uniqueClips[repairsDone].PlayDelayed(8f - (uniqueClips[0].time % 8f));
@@ -43,5 +46,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-
+    private void BackToMenu() {
+        SceneManager.LoadScene("MainMenu");
+    }
 }
